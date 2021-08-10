@@ -82,7 +82,6 @@ static NSString * const kJsPrintSource = @"(function() { return document.getElem
     }
 }
 
-
 - (void)listTabsInWindow:(Arguments *)args {
     NSInteger windowId = [args asInteger:@"id"];
     chromeWindow *window = [self findWindow:windowId];
@@ -106,6 +105,21 @@ static NSString * const kJsPrintSource = @"(function() { return document.getElem
 
     for (chromeTab *tab in window.tabs) {
         printf("[%ld] %s\n", (long)tab.id, tab.URL.UTF8String);
+    }
+}
+
+- (void)findTabsUrl:(Arguments *)args {
+    NSString *url = [args asString:@"url"];
+
+    for (chromeWindow *window in self.chrome.windows) {
+        for (chromeTab *tab in window.tabs) {
+            NSString *tabUrl = [NSString stringWithFormat:@"%s",
+                                tab.URL.UTF8String];
+
+            if ( [tabUrl containsString:url] ) {
+                printf("%ld \n", (long)tab.id);
+            }
+        }
     }
 }
 

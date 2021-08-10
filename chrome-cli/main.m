@@ -27,6 +27,7 @@ int main(int argc, const char * argv[])
     [argonaut add:@"list windows" target:app action:@selector(listWindows:) description:@"List all windows"];
     [argonaut add:@"list tabs" target:app action:@selector(listTabs:) description:@"List all tabs"];
     [argonaut add:@"list tabs -w <id>" target:app action:@selector(listTabsInWindow:) description:@"List tabs in specific window"];
+    [argonaut add:@"find tabs <url>" target:app action:@selector(findTabsUrl:) description:@"Find all the tabs corresponding to the url"];
     [argonaut add:@"list links" target:app action:@selector(listTabsLinks:) description:@"List all tabs' link"];
     [argonaut add:@"list links -w <id>" target:app action:@selector(listTabsLinksInWindow:) description:@"List tabs' link in specific window"];
 

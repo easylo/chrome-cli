@@ -57,6 +57,7 @@ More details [here](https://www.chromium.org/developers/applescript). Thanks to 
     chrome-cli list tabs -w <id>  (List tabs in specific window)
     chrome-cli list links  (List all tabs' link)
     chrome-cli list links -w <id>  (List tabs' link in specific window)
+    chrome-cli find <url> (Find all the tabs corresponding to the url)
     chrome-cli info  (Print info for active tab)
     chrome-cli info -t <id>  (Print info for specific tab)
     chrome-cli open <url>  (Open url in new tab)
